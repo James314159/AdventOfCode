@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec 11 15:53:32 2019
+
+@author: ninja
+"""
+
+def path_finder(A, B):
+    Aplaces = [[0,0]]
+    Bplaces =[[0,0]]
+    posA = [0,0]
+    posB = [0,0]
+    for i in A:
+        if i[0] == "U":
+            posA[1] += int(i[1:])
+            for i in range(1, int(i[1:])+1)
+                Aplaces.append(posA + [0,i])
+        if i[0] == "D":
+            posA[1] -= int(i[1:])
+            for i in range(1, int(i[1:])+1)
+                Aplaces.append(posA - [0,i])
+        if i[0] == "R":
+            posA[0] += int(i[1:])
+            for i in range(1, int(i[1:])+1)
+                Aplaces.append(posA + [i,0])
+        if i[0] == "L":
+            posA[0] -= int(i[1:])
+            for i in range(1, int(i[1:])+1)
+                Aplaces.append(posA - [i,0])
+    for i in B:
+        if i[0] == "U":
+            posB[1] += int(i[1:])
+            for i in range(1, int(i[1:])+1)
+                Bplaces.append(posB + [0,i])
+        if i[0] == "D":
+            posB[1] -= int(i[1:])
+            for i in range(1, int(i[1:])+1)
+                Bplaces.append(posB - [0,i])
+        if i[0] == "R":
+            posB[0] += int(i[1:])
+            for i in range(1, int(i[1:])+1)
+                Bplaces.append(posB + [i,0])
+        if i[0] == "L":
+            posB[0] -= int(i[1:])
+            for i in range(1, int(i[1:])+1)
+                Bplaces.append(posB - [i,0])
+    print(posA.intersection(posB))
+            
+            
