@@ -9,47 +9,41 @@ Created on Wed Dec 11 14:09:42 2019
 def summer(y):
     c=0
     for i in range(len(y)):
+        a = str(y[i])
         if c % 4 == 0:
-            if y[i][-2:] == "99":
+            if a[-2:] == "99":
                 break
-            elif y[i][-2:] == "1":
+            elif a[-1:] == "1":
                 c += 1
-                if len(y[i][:-2]) == 3:
-                    if y[i][:-2][1] == "1":
-                        y[y[i+3]] = str(int(y[i+2]) + int(y[i+1]))
+                if len(a) == 4:
+                    if a[1] == "1":
+                        y[y[i+3]] = int(y[i+2]) + int(y[i+1])
                     else:
-                        y[y[i+3]] = str(int(y[i+1]) + int(y[y[i+2]]))
-                if len(y[i][:-2]) = 2:
-                    if y[i][:-2][1] == "1":
-                        y[y[i+3]] = str(int(y[i+2]) + int(y[y[i+1]]))
-                    else:
-                        y[y[i+3]] = str(int(y[y[i+1]]) + int(y[y[i+2]]))
-                if len(y[i][:-2]) = 0:
-                    y[y[i+3]] = str(int(y[y[i+1]]) + int(y[y[i+2]]))
+                        y[y[i+3]] = int(y[i+2]) + int(y[y[i+1]])
+                if len(a) == 3:
+                    y[y[i+3]] = int(y[i+1]) + int(y[y[i+2]])
+                if len(a) == 1:
+                    y[y[i+3]] = int(y[y[i+1]]) + int(y[y[i+2]])
                             
    
-            elif y[i][-2:] == "2":
+            elif a[-1:] == "2":
                 c += 1
-                if len(y[i][:-2]) == 3:
-                    if y[i][:-2][1] == "1":
-                        y[y[i+3]] = str(int(y[i+2]) * int(y[i+1]))
+                if len(a) == 4:
+                    if a[1] == "1":
+                        y[y[i+3]] = int(y[i+2]) * int(y[i+1])
                     else:
-                        y[y[i+3]] = str(int(y[i+1]) * int(y[y[i+2]]))
-                if len(y[i][:-2]) = 2:
-                    if y[i][:-2][1] == "1":
-                        y[y[i+3]] = str(int(y[i+2]) * int(y[y[i+1]]))
-                    else:
-                        y[y[i+3]] = str(int(y[y[i+1]]) * int(y[y[i+2]]))
-                if len(y[i][:-2]) = 0:
-                    y[y[i+3]] = str(int(y[y[i+1]]) * int(y[y[i+2]]))
+                        y[y[i+3]] = int(y[i+2]) * int(y[y[i+1]])
+                if len(a) == 3:
+                    y[y[i+3]] = int(y[i+1]) * int(y[y[i+2]])
+                if len(a) == 1:
+                    y[y[i+3]] = int(y[y[i+1]]) * int(y[y[i+2]])
                 
                 
-            elif y[i] == "3":
+            elif a == "3":
                 c+=3
                 y[y[i+1]] = input("gimme")
-                print("ooh")
-            elif y[i] == "4":
+            elif a == "4":
                 c+=3
-                print(y[i+1])
+                print(y[y[i+1]])
         else:
             c+=1
